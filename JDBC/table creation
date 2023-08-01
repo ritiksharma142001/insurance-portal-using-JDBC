@@ -1,0 +1,39 @@
+create table Customer (
+id int PRIMARY KEY,
+name varchar(15),
+email varchar(20),
+pass char(15),
+address char(50),
+nominee varchar(15),
+relation  varchar(10),
+contact varchar(10)
+);
+
+create table Policy(
+id int,
+custid int,
+ptype varchar(15),
+title varchar(10),
+start varchar(10),
+term int,
+premium int,
+sum_assured int,
+primary key(id),
+foreign key(custid) references
+Customer(id)
+);
+
+Drop table policy;
+
+CREATE TABLE policy(
+id int,
+custid int,
+ptype varchar(15),
+title varchar(10),
+start varchar(10),
+term int,
+premium int,
+sum_assured int,
+PRIMARY KEY(id,custid),
+FOREIGN KEY(custid) REFERENCES CUSTOMER(id)
+);
